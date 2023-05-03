@@ -30,7 +30,26 @@
                       </div>
                       <div class="form-group">
                           <label>Status</label>
-                          <input type="text" name="Status" class="form-control" value="<?php echo $row1['status']; ?>"  placeholder="" required>
+                          <select class="form-control" name="status" value="<?php echo $row['status']; ?>">
+                          <?php
+                            if($row['status']==1)
+                            {
+                              echo " <option value='0'>Pending</option>
+                                      <option value='1'selected>Completed</option>";
+                            }
+                            else
+                            {
+                                echo " <option value='0'selected>Pending</option>
+                                      <option value='1'>Completed</option>"; 
+                            }
+
+                           ?>
+                          </select>
+                          <!-- <input type="text" name="status" class="form-control" value="<?php echo $row1['status']; ?>"  placeholder="" required> -->
+                      </div>
+                      <div class="form-group">
+                          <label>Comment</label>
+                          <input type="text" name="comment" class="form-control" value=""  placeholder="" required>
                       </div>
                       <input type="submit" name="sumbit" class="btn btn-primary" value="Save" required />
                   </form>

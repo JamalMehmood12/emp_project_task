@@ -35,6 +35,9 @@
                   </div>
                    <div class="form-group">
                    <label>Status</label>
+                   <option value="22">Pending</option>
+                            <option value="24">Completed</option>
+                </div>
                    <input type="date" id="date" name="date">
                     </div>
                     <div class="form-group">

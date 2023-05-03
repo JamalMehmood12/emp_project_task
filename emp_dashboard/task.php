@@ -2,6 +2,8 @@
 <div id="admin-content">
     <div class="container">
         <div class="row">
+          <?php echo "Welcome, " . $_SESSION["username"] . "!";
+          ?>
             <div class="col-md-10">
                 <h1 class="admin-heading">Task</h1>
             </div>
@@ -24,7 +26,7 @@
               // $sql ="SELECT * FROM tasks";
               $sql="SELECT * From tasks
               JOIN employees ON tasks.assigned_to = employees.EmployeeId
-              WHERE tasks.assigned_to = '{$_SESSION['Employee_Id']}'";
+              WHERE tasks.assigned_to = '{$_SESSION["Employee_Id"]}'";
 
                $result =mysqli_query($conn,$sql) or die("query failed");
               if(mysqli_num_rows($result)>0)
@@ -47,28 +49,25 @@
                             <td><?php echo $row['task_description']; ?></td>
                             <td>
                             <?php
-                            if($row['status']==1)
+                            if($row['status']=='22')
                             {
-                              echo " <option value='0'>Pending</option>
-                                      <option value='1'selected>Completed</option>";
+                              echo " <option value='22'>Pending</option>";
                             }
                             else
                             {
-                                echo " <option value='0'selected>Pending</option>
-                                      <option value='1'>Completed</option>"; 
+                                echo "
+                                      <option value='24'>Completed</option>"; 
                             }
 
                            ?>
                               
-                              
-                              
                               <?php 
-                            //  if($row['status']=22)
+                             //if($row['status']=0)
                              // echo "Pending";
-                            //  else
-                            //  {
-                             //   echo "Process";
-                             // }
+                             //else
+                            // {
+                           //   echo "Completed";
+                           //  }
                               
                               
                               ?></td>

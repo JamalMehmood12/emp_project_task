@@ -41,8 +41,20 @@
                           <label>Status</label>
                           <div class="form-group">
                           <select class="form-control" name="status" >
-                              <option value="0">Pending </option>
-                              <option value="1">Completed </option>
+                            
+                            <option value="22">Pending</option>
+                            <option value="24">Completed</option>
+
+                          <?php
+                            // if($row['status']==1)
+                            // {
+                            //   echo "<option value='0'>Pending</option>";
+                            // }
+                            // else
+                       
+                           ?>
+                              
+                              
                               <!-- <option value="1">Admin</option> -->
                           </select> 
                           </div>
