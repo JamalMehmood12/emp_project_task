@@ -30,7 +30,7 @@ if(!isset($_SESSION['username']))
                 <div class="row">
                     <!-- LOGO -->
                     <div class="col-md-2">
-                        <a href="post.php">
+                        <a href="task.php">
                         <h2 style="color:white;font-weight:25px; font-weight:700;">EMS</h2>
                     </div>
                     <!-- /LOGO -->
@@ -52,7 +52,7 @@ if(!isset($_SESSION['username']))
                          
                          
                             <li>
-                                <a href="users.php">Dashoard</a>
+                                <a href="task.php">Dashoard</a>
                             </li>
                             <?php
                          if($_SESSION["user_role"] == 1)

@@ -5,14 +5,14 @@ $conn =mysqli_connect("localhost","root","","emp_system") or die("connection fai
 session_start();
 // if(isset($_SESSION['username']))
 // {
-//     header("Location:http://localhost:7882/emp_project/admin/");
+//     header("Location:http://localhost:7882/emp_project/emp_dashboard/category.php");
 // }
-?>
+// ?>
    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ADMIN | Login</title>
+        <title>Employee| Login</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="../css/style.css">
@@ -44,17 +44,17 @@ session_start();
                         {
                         $user= mysqli_real_escape_string($conn,$_POST['username']);
                         $password=md5($_POST['password']);
-                        $sql ="SELECT user_id,username,role FROM users WHERE username='{$user}' AND password='{$password}'"; 
-                       $result=mysqli_query($conn,$sql)or die("query failed");
-                        if(mysqli_num_rows($result)>0)
+                        $sql ="SELECT EmployeeId,UserName,UserRole FROM employees WHERE UserName='{$user}' AND Password='{$password}'";
+                      $result=mysqli_query($conn,$sql) or die("query failed");
+                       if(mysqli_num_rows($result)>0)
                         {
                             while($row=mysqli_fetch_assoc($result))
                             {
                                 session_start();
-                                $_SESSION["username"]=$row['username'];
-                                $_SESSION["user_id"]=$row['user_id'];
-                                $_SESSION["user_role"]=$row['role'];
-                                header("Location:http://localhost:7882/emp_project/admin/users.php");
+                                $_SESSION["username"]=$row['UserName'];
+                                $_SESSION["Employee_Id"]=$row['EmployeeId'];
+                                $_SESSION["user_role"]=$row['UserRole'];
+                                header("Location:http://localhost:7882/emp_project/emp_dashboard/task.php");
                             }
                         }
                         else
