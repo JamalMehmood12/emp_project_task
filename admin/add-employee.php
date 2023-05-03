@@ -46,9 +46,20 @@ if(isset($_POST['submit']))
                       </div>
                       <div class="form-group">
                           <label>User Role</label>
-                          <select class="form-control" name="role" >
-                              <option value="0">Normal User</option>
-                              <option value="1">Admin</option>
+                          <select class="form-control" name="UserRole" >
+                          <?php
+                            if($row['UserRole']==1)
+                            {
+                              echo " <option value='0'>normal User</option>
+                                      <option value='1'selected>Admin</option>";
+                            }
+                            else
+                            {
+                                echo " <option value='0'selected>normal User</option>
+                                      <option value='1'>Admin</option>"; 
+                            }
+
+                           ?>
                           </select> 
                   </div>
                       <input type="submit" name="submit" class="btn btn-primary" value="Save" required />

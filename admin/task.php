@@ -41,13 +41,28 @@
                             <td class='id'><?php echo $row['task']; ?></td>
                             <td><?php echo $row['task_name']; ?></td>
                             <td><?php echo $row['task_description']; ?></td>
-                            <td><?php 
-                              if($row['status']='0')
-                              echo "Pending";
-                              else
-                              {
-                                echo "Compelted";
-                              }
+                            <td>
+                            <?php
+                            if($row['status']==1)
+                            {
+                              echo " <option value='0'>Pending</option>
+                                      <option value='1'selected>Completed</option>";
+                            }
+                            else
+                            {
+                                echo " <option value='0'selected>Pending</option>
+                                      <option value='1'>Completed</option>"; 
+                            }
+
+                           ?>
+                              
+                              <?php 
+                            //  if($row['status']='0')
+                            //  echo "Pending";
+                            //  else
+                            //  {
+                             //   echo "Compelted";
+                            //  }
                               
                               
                               ?></td>
