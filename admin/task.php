@@ -42,7 +42,7 @@
                             <td><?php echo $row['task_name']; ?></td>
                             <td><?php echo $row['task_description']; ?></td>
                             <td><?php 
-                              if($row['status']=0)
+                              if($row['status']='0')
                               echo "Pending";
                               else
                               {
